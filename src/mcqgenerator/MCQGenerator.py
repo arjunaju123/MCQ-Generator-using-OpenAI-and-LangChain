@@ -15,7 +15,7 @@ load_dotenv() # take environment variables from .env file
 
 #KEY = os.getenv("OPENAI_API_KEY")
 
-KEY = "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"
+KEY = "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"
 
 llm = ChatOpenAI(openai_api_key=KEY,model_name="gpt-3.5-turbo",temperature=0.3)
 
