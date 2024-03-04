@@ -1,4 +1,4 @@
-# MCQ Generator using OpenAI and Langchain
+# MCQ Generator using OpenAI and Langchain 🦜️🔗
 
 # Deployment steps in AWS
 1. first login to the AWS: https://aws.amazon.com/console/
