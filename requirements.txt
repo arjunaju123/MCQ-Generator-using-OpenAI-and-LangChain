@@ -5,3 +5,10 @@ python-dotenv
 PyPDF2
 
 -e .
+PyPDF2==3.0.1
+dotenv==0.9.9
+langchain==0.3.27
+pandas==2.3.1
+setuptools==80.9.0
+src==0.0.7
+streamlit==1.48.1
