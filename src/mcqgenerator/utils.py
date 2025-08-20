@@ -1,5 +1,5 @@
 import os
-import pypdf
+from pypdf import PdfReader, PdfWriter  # or import only what you need
 import json
 import traceback
 

@@ -6,10 +6,10 @@ from dotenv import load_dotenv
 from src.mcqgenerator.utils import read_file,get_table_data
 from src.mcqgenerator.logger import logging
 
-from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains.llm_chain import LLMChain
-from langchain.chains.sequential import SequentialChain
+from langchain_openai.chat_models import ChatOpenAI
+from langchain_core.prompts.chat import ChatPromptTemplate
+from langchain.chains.llm import LLMChain
+from langchain.chains.sequential import RunnableSequence (from langchain_core.runnables)
 
 load_dotenv() # take environment variables from .env file
 
@@ -55,7 +55,7 @@ quiz_evaluation_prompt=PromptTemplate(input_variables=["subject", "quiz"], templ
 
 review_chain=LLMChain(llm=llm, prompt=quiz_evaluation_prompt, output_key="review", verbose=True)
 
-generate_evaluate_chain=SequentialChain(chains=[quiz_chain, review_chain], input_variables=["text", "number", "subject", "tone", "response_json"],
+generate_evaluate_chain=RunnableSequence (from langchain_core.runnables)(chains=[quiz_chain, review_chain], input_variables=["text", "number", "subject", "tone", "response_json"],
                                         output_variables=["quiz", "review"], verbose=True)
 
 
