@@ -6,10 +6,10 @@ from dotenv import load_dotenv
 from src.mcqgenerator.utils import read_file,get_table_data
 from src.mcqgenerator.logger import logging
 
-from langchain_openai import ChatOpenAI
-from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
-from langchain_experimental.chains import SequentialChain
+from langchain_openai.chat_models import ChatOpenAI
+from langchain_core.prompts import PromptTemplate
+from langchain.chains.llm import LLMChain
+from langchain_experimental.chains.sequential import SequentialChain
 
 load_dotenv() # take environment variables from .env file
 
