@@ -1,12 +1,12 @@
 import os
-import PyPDF2
+import pypdf
 import json
 import traceback
 
 def read_file(file):
     if file.name.endswith('.pdf'):
         try:
-            pdf_reader = PyPDF2.PdfReader(file)
+            pdf_reader = PyPDF2.PdfReader(file)  # No change in code, but review required.
             text=""
             for page in pdf_reader.pages:
                 text+=page.extract_text()
